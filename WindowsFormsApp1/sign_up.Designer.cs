@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class sign_in
+    partial class sign_up
     {
         /// <summary>
         /// Required designer variable.
@@ -34,18 +34,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnSignUp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEnter
             // 
-            this.btnEnter.Location = new System.Drawing.Point(170, 126);
+            this.btnEnter.Location = new System.Drawing.Point(107, 126);
             this.btnEnter.Name = "btnEnter";
             this.btnEnter.Size = new System.Drawing.Size(75, 23);
             this.btnEnter.TabIndex = 0;
             this.btnEnter.Text = "Enter";
             this.btnEnter.UseVisualStyleBackColor = true;
-            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
+            this.btnEnter.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -81,43 +80,33 @@
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(152, 20);
             this.textBox2.TabIndex = 4;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(260, 126);
+            this.btnExit.Location = new System.Drawing.Point(209, 126);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btnSignUp
-            // 
-            this.btnSignUp.Location = new System.Drawing.Point(80, 126);
-            this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(75, 23);
-            this.btnSignUp.TabIndex = 6;
-            this.btnSignUp.Text = "Register";
-            this.btnSignUp.UseVisualStyleBackColor = true;
-            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
-            // 
-            // sign_in
+            // sign_up
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(357, 176);
-            this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEnter);
-            this.Name = "sign_in";
-            this.Text = "Log in";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.sign_in_FormClosing);
+            this.Name = "sign_up";
+            this.Text = "Register";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.sign_up_FormClosing);
+            this.Load += new System.EventHandler(this.sign_in_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,7 +120,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnSignUp;
     }
 }
 

@@ -19,64 +19,32 @@ namespace WindowsFormsApp1
             InitializeComponent();
             Connectdb();
         }
-        // connect database
-        string strCon = @"Data Source=DESKTOP-GK3VBNL\SQLEXPRESS;Initial Catalog=user;Integrated Security=True";
-        SqlConnection sqlCon = null;
 
         // global variable
         bool isData1 = false;
         bool isData2 = false;
-        int userCount = 0;
+
+        // connect database
+        string strCon = @"Data Source=DESKTOP-GK3VBNL\SQLEXPRESS;Initial Catalog=user;Integrated Security=True";
+        SqlConnection sqlCon = null;
 
         private void Connectdb()
         {
-            if(sqlCon == null)
+            if (sqlCon == null)
             {
                 sqlCon = new SqlConnection(strCon);
             }
-            if(sqlCon.State != ConnectionState.Open)
+            if (sqlCon.State != ConnectionState.Open)
             {
                 sqlCon.Open(); // open database if state == close
             }
         }
-
-        private void sign_in_Load(object sender, EventArgs e)
+        private void btnSignUp_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string userName = "";
-            string password = "";
-            if (isData1 == true && isData2 == true)
-            {
-                userName = textBox1.Text;
-                password = textBox2.Text;
-                userCount++;
-                textBox1.Text = String.Empty;
-                textBox2.Text = String.Empty;
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.Text;
-                string sqlCmd = "INSERT INTO UserRegister (UserID, UserName, Password) VALUES ('" + userCount +"'" + ",' "+ userName + "',' "+ password + "');";
-                //MessageBox.Show(sqlCmd);
-                cmd.CommandText = sqlCmd;
-                cmd.Connection = sqlCon;
-
-                int n = cmd.ExecuteNonQuery();
-                if(n == 0)
-                {
-                    MessageBox.Show("Failed to insert db !!!");
-                }
-                else
-                {
-                    Menu mainMenu = new Menu();
-                    this.Hide();
-                    mainMenu.ShowDialog();
-                    this.Show();
-                    sqlCon.Close();
-                }
-            }
+            sign_up sign_Up = new sign_up();
+            this.Hide();
+            sign_Up.ShowDialog();
+            this.Show();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -89,14 +57,54 @@ namespace WindowsFormsApp1
             isData2 = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnEnter_Click(object sender, EventArgs e)
+        {
+            string userName = "";
+            string password = "";
+            bool isUser = false;
+            if (isData1 == true && isData2 == true)
+            {
+                userName = textBox1.Text;
+                password = textBox2.Text;
+                textBox1.Text = String.Empty;
+                textBox2.Text = String.Empty;
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+                string sqlCmd = "SELECT UserName,Password  FROM UserRegister;";
+                cmd.CommandText = sqlCmd;
+                cmd.Connection = sqlCon;
+
+                SqlDataReader reader = cmd.ExecuteReader();
+           
+                while (reader.Read())
+                {
+                    if (String.Equals(reader["UserName"].ToString().Replace(" ", ""), userName) &&
+                        String.Equals( reader["Password"].ToString().Replace(" ", ""), password)) // must remove space after select from dtb 
+                    {
+                        isUser = true;
+                        break;
+                    }
+                }
+                if(isUser == true)
+                {
+                    Menu mainMenu = new Menu();
+                    this.Hide();
+                    mainMenu.ShowDialog();
+                    this.Show();
+                    sqlCon.Close();
+                    reader.Close();
+                }
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
         private void sign_in_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(MessageBox.Show("Do you want to quit?", "Notification",MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            if (MessageBox.Show("Do you want to quit?", "Notification", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
             {
                 e.Cancel = true;
             }
