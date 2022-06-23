@@ -1,0 +1,12 @@
+D:\Project\TDT_training\WinFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\Project\TDT_training\WinFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\Project\TDT_training\WinFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\Project\TDT_training\WinFormsApp1\WindowsFormsApp1\obj\Debug\register.csproj.AssemblyReference.cache
+D:\Project\TDT_training\WinFormsApp1\WindowsFormsApp1\obj\Debug\register.csproj.SuggestedBindingRedirects.cache
+D:\Project\TDT_training\WinFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.sign_in.resources
+D:\Project\TDT_training\WinFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\Project\TDT_training\WinFormsApp1\WindowsFormsApp1\obj\Debug\register.csproj.GenerateResource.cache
+D:\Project\TDT_training\WinFormsApp1\WindowsFormsApp1\obj\Debug\register.csproj.CoreCompileInputs.cache
+D:\Project\TDT_training\WinFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\Project\TDT_training\WinFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\Project\TDT_training\WinFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Menu.resources
