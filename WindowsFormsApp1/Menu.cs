@@ -26,6 +26,12 @@ namespace WindowsFormsApp1
             InitializeComponent();
             initObj();
         }
+        public Menu(string userName)
+        {
+            InitializeComponent();
+            initObj();
+            lblAdmin.Text = "ADMIN : " + userName;
+        }
 
         // connect database
         string strCon = @"Data Source=DESKTOP-GK3VBNL\SQLEXPRESS;Initial Catalog=Order;Integrated Security=True";
@@ -220,7 +226,8 @@ namespace WindowsFormsApp1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblClock.Text = DateTime.Now.ToString();
+            lblClock.Text = DateTime.Now.ToString(); 
         }
+
     }
 }

@@ -68,6 +68,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblClock = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblAdmin = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -81,16 +82,16 @@
             // 
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(47, 42);
+            this.panel1.Location = new System.Drawing.Point(15, 42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(197, 169);
+            this.panel1.Size = new System.Drawing.Size(135, 156);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 143);
+            this.label1.Location = new System.Drawing.Point(41, 130);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 1;
@@ -99,7 +100,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(41, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(14, 17);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 94);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -111,15 +112,15 @@
             // 
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(259, 42);
+            this.panel2.Location = new System.Drawing.Point(152, 42);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(197, 169);
+            this.panel2.Size = new System.Drawing.Size(131, 156);
             this.panel2.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(72, 143);
+            this.label2.Location = new System.Drawing.Point(40, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 1;
@@ -128,7 +129,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(41, 26);
+            this.pictureBox2.Location = new System.Drawing.Point(15, 17);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 94);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -139,15 +140,15 @@
             // 
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Location = new System.Drawing.Point(475, 42);
+            this.panel3.Location = new System.Drawing.Point(289, 42);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(197, 169);
+            this.panel3.Size = new System.Drawing.Size(148, 156);
             this.panel3.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(72, 143);
+            this.label3.Location = new System.Drawing.Point(50, 130);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 1;
@@ -156,7 +157,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(41, 26);
+            this.pictureBox3.Location = new System.Drawing.Point(25, 17);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(100, 94);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -165,7 +166,7 @@
             // 
             // btnPizza1Add
             // 
-            this.btnPizza1Add.Location = new System.Drawing.Point(61, 231);
+            this.btnPizza1Add.Location = new System.Drawing.Point(41, 204);
             this.btnPizza1Add.Name = "btnPizza1Add";
             this.btnPizza1Add.Size = new System.Drawing.Size(78, 24);
             this.btnPizza1Add.TabIndex = 3;
@@ -175,7 +176,7 @@
             // 
             // btnPizza1Sub
             // 
-            this.btnPizza1Sub.Location = new System.Drawing.Point(145, 232);
+            this.btnPizza1Sub.Location = new System.Drawing.Point(41, 234);
             this.btnPizza1Sub.Name = "btnPizza1Sub";
             this.btnPizza1Sub.Size = new System.Drawing.Size(75, 23);
             this.btnPizza1Sub.TabIndex = 4;
@@ -185,7 +186,7 @@
             // 
             // btnPizza2Sub
             // 
-            this.btnPizza2Sub.Location = new System.Drawing.Point(359, 232);
+            this.btnPizza2Sub.Location = new System.Drawing.Point(181, 234);
             this.btnPizza2Sub.Name = "btnPizza2Sub";
             this.btnPizza2Sub.Size = new System.Drawing.Size(75, 23);
             this.btnPizza2Sub.TabIndex = 6;
@@ -195,7 +196,7 @@
             // 
             // btnPizza2Add
             // 
-            this.btnPizza2Add.Location = new System.Drawing.Point(275, 231);
+            this.btnPizza2Add.Location = new System.Drawing.Point(181, 204);
             this.btnPizza2Add.Name = "btnPizza2Add";
             this.btnPizza2Add.Size = new System.Drawing.Size(78, 24);
             this.btnPizza2Add.TabIndex = 5;
@@ -205,7 +206,7 @@
             // 
             // btnPizzaMixSub
             // 
-            this.btnPizzaMixSub.Location = new System.Drawing.Point(583, 233);
+            this.btnPizzaMixSub.Location = new System.Drawing.Point(336, 234);
             this.btnPizzaMixSub.Name = "btnPizzaMixSub";
             this.btnPizzaMixSub.Size = new System.Drawing.Size(75, 23);
             this.btnPizzaMixSub.TabIndex = 8;
@@ -215,7 +216,7 @@
             // 
             // btnPizzaMixAdd
             // 
-            this.btnPizzaMixAdd.Location = new System.Drawing.Point(499, 232);
+            this.btnPizzaMixAdd.Location = new System.Drawing.Point(336, 204);
             this.btnPizzaMixAdd.Name = "btnPizzaMixAdd";
             this.btnPizzaMixAdd.Size = new System.Drawing.Size(78, 24);
             this.btnPizzaMixAdd.TabIndex = 7;
@@ -446,11 +447,21 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lblAdmin
+            // 
+            this.lblAdmin.AutoSize = true;
+            this.lblAdmin.Location = new System.Drawing.Point(354, 9);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.Size = new System.Drawing.Size(35, 13);
+            this.lblAdmin.TabIndex = 11;
+            this.lblAdmin.Text = "admin";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 450);
+            this.ClientSize = new System.Drawing.Size(455, 419);
+            this.Controls.Add(this.lblAdmin);
             this.Controls.Add(this.lblClock);
             this.Controls.Add(this.lblPanel);
             this.Controls.Add(this.btnPizzaMixSub);
@@ -520,5 +531,6 @@
         private System.Windows.Forms.Button btnCalc;
         private System.Windows.Forms.Label lblClock;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblAdmin;
     }
 }

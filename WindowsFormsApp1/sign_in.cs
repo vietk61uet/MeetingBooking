@@ -70,7 +70,7 @@ namespace WindowsFormsApp1
                 textBox2.Text = String.Empty;
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.Text;
-                string sqlCmd = "SELECT UserName,Password  FROM UserRegister;";
+                string sqlCmd = "SELECT UserName,Password FROM UserRegister;";
                 cmd.CommandText = sqlCmd;
                 cmd.Connection = sqlCon;
 
@@ -87,12 +87,16 @@ namespace WindowsFormsApp1
                 }
                 if(isUser == true)
                 {
-                    Menu mainMenu = new Menu();
+                    Menu mainMenu = new Menu(userName);
                     this.Hide();
                     mainMenu.ShowDialog();
                     this.Show();
                     sqlCon.Close();
                     reader.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect user. Please check again or register");
                 }
             }
         }
