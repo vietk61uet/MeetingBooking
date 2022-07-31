@@ -1,3 +1,3 @@
-# PizzaStore
+# IOT Meeting Booking
 
-A mini project using C# winform technology
+A project using C# winform technology for meeting booking
