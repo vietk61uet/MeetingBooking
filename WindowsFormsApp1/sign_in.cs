@@ -39,13 +39,6 @@ namespace WindowsFormsApp1
                 sqlCon.Open(); // open database if state == close
             }
         }
-        private void btnSignUp_Click(object sender, EventArgs e)
-        {
-            sign_up sign_Up = new sign_up();
-            this.Hide();
-            sign_Up.ShowDialog();
-            this.Show();
-        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -70,7 +63,7 @@ namespace WindowsFormsApp1
                 textBox2.Text = String.Empty;
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.Text;
-                string sqlCmd = "SELECT UserName,Password FROM UserRegister;";
+                string sqlCmd = "SELECT UserName,Password FROM admin;";
                 cmd.CommandText = sqlCmd;
                 cmd.Connection = sqlCon;
 
@@ -87,7 +80,7 @@ namespace WindowsFormsApp1
                 }
                 if(isUser == true)
                 {
-                    Menu mainMenu = new Menu(userName);
+                    Menu mainMenu = new Menu();
                     this.Hide();
                     mainMenu.ShowDialog();
                     this.Show();
@@ -113,5 +106,6 @@ namespace WindowsFormsApp1
                 e.Cancel = true;
             }
         }
+
     }
 }

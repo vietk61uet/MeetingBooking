@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="editUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editUser.Designer.cs">
+      <DependentUpon>editUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="removeUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="removeUser.Designer.cs">
+      <DependentUpon>removeUser.cs</DependentUpon>
     </Compile>
     <Compile Include="sign_in.cs">
       <SubType>Form</SubType>
@@ -73,6 +85,9 @@
     </Compile>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="removeUser.resx">
+      <DependentUpon>removeUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sign_in.resx">
       <DependentUpon>sign_in.cs</DependentUpon>

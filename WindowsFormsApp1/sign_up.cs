@@ -27,6 +27,7 @@ namespace WindowsFormsApp1
         bool isData1 = false;
         bool isData2 = false;
         int userCount = 0;
+        String imageLocation = "";
 
         private void Connectdb()
         {
@@ -48,32 +49,28 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             string userName = "";
-            string password = "";
+            string ID = "";
             if (isData1 == true && isData2 == true)
             {
                 userName = textBox1.Text;
-                password = textBox2.Text;
+                ID = textBox2.Text;
                 userCount++;
                 textBox1.Text = String.Empty;
                 textBox2.Text = String.Empty;
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.Text;
-                string sqlCmd = "INSERT INTO UserRegister (UserID, UserName, Password) VALUES ('" + userCount +"'" + ",' "+ userName + "',' "+ password + "');";
-                cmd.CommandText = sqlCmd;
-                cmd.Connection = sqlCon;
+                SqlCommand cmd1 = new SqlCommand();
+                cmd1.CommandType = CommandType.Text;
+                string sqlCmd = "INSERT INTO UserRegister (UserID, UserName, ImageLocation) VALUES ('" + ID +"'" + ",' "+ userName  + "',' "+ imageLocation + "');";
+                cmd1.CommandText = sqlCmd;
+                cmd1.Connection = sqlCon;
 
-                int n = cmd.ExecuteNonQuery();
+                int n = cmd1.ExecuteNonQuery();
                 if(n == 0)
                 {
-                    MessageBox.Show("Failed to insert db !!!");
+                    MessageBox.Show("Failed to create user !!!");
                 }
                 else
                 {
                     MessageBox.Show("Create user successfully ");
-                    sign_in sign_In = new sign_in();
-                    this.Hide();
-                    sign_In.ShowDialog();
-                    this.Show();
                 }
             }
         }
@@ -90,9 +87,9 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            sign_in sign_In = new sign_in();
+            Menu menu = new Menu();
             this.Hide();
-            sign_In.ShowDialog();
+            menu.ShowDialog();
             this.Show();
         }
 
@@ -101,6 +98,26 @@ namespace WindowsFormsApp1
             if (MessageBox.Show("Do you want to quit?", "Notification", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Image Files (*.jpg;*.jpeg;.*.gif;)|*.jpg;*.jpeg;.*.gif";
+
+                if (DialogResult.OK == openFileDialog.ShowDialog())
+                {
+                    imageLocation = openFileDialog.FileName;
+                    image1.ImageLocation = imageLocation;
+                }    
+
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Have error to load image employee ");
             }
         }
     }

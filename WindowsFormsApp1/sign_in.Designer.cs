@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnSignUp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEnter
@@ -93,22 +92,11 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnSignUp
-            // 
-            this.btnSignUp.Location = new System.Drawing.Point(80, 126);
-            this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(75, 23);
-            this.btnSignUp.TabIndex = 6;
-            this.btnSignUp.Text = "Register";
-            this.btnSignUp.UseVisualStyleBackColor = true;
-            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
-            // 
             // sign_in
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 176);
-            this.Controls.Add(this.btnSignUp);
+            this.ClientSize = new System.Drawing.Size(363, 176);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
@@ -131,7 +119,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnSignUp;
     }
 }
 
