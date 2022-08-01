@@ -52,6 +52,12 @@
     <Compile Include="editUser.Designer.cs">
       <DependentUpon>editUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="editUserDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editUserDetail.Designer.cs">
+      <DependentUpon>editUserDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>userDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="editUser.resx">
+      <DependentUpon>editUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editUserDetail.resx">
+      <DependentUpon>editUserDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>

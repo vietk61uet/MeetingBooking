@@ -83,7 +83,6 @@ namespace WindowsFormsApp1
                     Menu mainMenu = new Menu();
                     this.Hide();
                     mainMenu.ShowDialog();
-                    this.Show();
                     sqlCon.Close();
                     reader.Close();
                 }

@@ -12,3 +12,5 @@ D:\Project\PizzaStore\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 D:\Project\PizzaStore\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.sign_in.resources
 D:\Project\PizzaStore\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Menu.resources
 D:\Project\PizzaStore\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.removeUser.resources
+D:\Project\PizzaStore\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.editUser.resources
+D:\Project\PizzaStore\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.editUserDetail.resources

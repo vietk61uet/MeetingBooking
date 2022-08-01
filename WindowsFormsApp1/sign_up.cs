@@ -90,7 +90,7 @@ namespace WindowsFormsApp1
             Menu menu = new Menu();
             this.Hide();
             menu.ShowDialog();
-            this.Show();
+            //this.Show();
         }
 
         private void sign_up_FormClosing(object sender, FormClosingEventArgs e)

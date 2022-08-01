@@ -39,7 +39,9 @@ namespace WindowsFormsApp1
         private void btnExit_Click(object sender, EventArgs e)
         {
             //xử lý sự kiện cho button thoát
-            Application.Exit();
+            Menu menu = new Menu();
+            this.Hide();
+            menu.ShowDialog();
         }
 
         private void btnSeach_Click(object sender, EventArgs e)
@@ -57,7 +59,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                string sqlCmd = "SELECT UserID, UserName FROM UserRegister WHERE UserName LIKE '%"+ txtSearch.Text +"%' ;";
+                string sqlCmd = "SELECT UserID, UserName, ImageLocation FROM UserRegister WHERE UserName LIKE '%" + txtSearch.Text + "%' ;";
                 da.SelectCommand = new SqlCommand();
                 da.SelectCommand.CommandText = sqlCmd;
                 da.SelectCommand.CommandType = CommandType.Text;
@@ -65,10 +67,12 @@ namespace WindowsFormsApp1
                 da.Fill(dt);
                 dtgDSHS.DataSource = dt;
                 //set up độ dài và tiêu đề cho các cột
-                dtgDSHS.Columns[0].Width = 100;
+                dtgDSHS.Columns[0].Width = 60;
                 dtgDSHS.Columns[0].HeaderText = "UserID";
-                dtgDSHS.Columns[1].Width = 150;
+                dtgDSHS.Columns[1].Width = 80;
                 dtgDSHS.Columns[1].HeaderText = "UserName";
+                dtgDSHS.Columns[1].Width = 120;
+                dtgDSHS.Columns[1].HeaderText = "Image";
             }
             catch (Exception ex)
             {
