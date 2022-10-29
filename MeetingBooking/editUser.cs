@@ -86,6 +86,7 @@ namespace WindowsFormsApp1
                 location = this.dtgDSHS.SelectedCells[2].Value.ToString();
                 editUserDetail editUserDetail = new editUserDetail(name, id, location);
                 this.Hide();
+                editUserDetail.Owner = this;
                 editUserDetail.ShowDialog();
                 //this.Show();
             }

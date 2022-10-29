@@ -109,9 +109,8 @@ namespace WindowsFormsApp1
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            editUser edit_user = new editUser();
-            this.Hide();
-            edit_user.ShowDialog();
+            this.Owner.Show();
+            this.Close();
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 using System.Data.SqlClient;
 
@@ -106,6 +107,8 @@ namespace WindowsFormsApp1
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.Filter = "Image Files (*.jpg;*.jpeg;.*.gif;)|*.jpg;*.jpeg;.*.gif";
+                string workingDirectory = Environment.CurrentDirectory;
+                openFileDialog.InitialDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName + "\\WindowsFormsApp1\\image";
 
                 if (DialogResult.OK == openFileDialog.ShowDialog())
                 {
