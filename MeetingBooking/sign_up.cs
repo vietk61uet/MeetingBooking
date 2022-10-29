@@ -108,7 +108,7 @@ namespace WindowsFormsApp1
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.Filter = "Image Files (*.jpg;*.jpeg;.*.gif;)|*.jpg;*.jpeg;.*.gif";
                 string workingDirectory = Environment.CurrentDirectory;
-                openFileDialog.InitialDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName + "\\WindowsFormsApp1\\image";
+                openFileDialog.InitialDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName + "\\MeetingBooking\\image";
 
                 if (DialogResult.OK == openFileDialog.ShowDialog())
                 {

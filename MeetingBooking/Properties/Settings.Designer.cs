@@ -26,8 +26,7 @@ namespace WindowsFormsApp1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-GK3VBNL\\SQLEXPRESS;Initial Catalog=user;Integrated Security=T" +
-            "rue")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost;Database=master;Trusted_Connection=True;")]
         public string userConnectionString {
             get {
                 return ((string)(this["userConnectionString"]));
