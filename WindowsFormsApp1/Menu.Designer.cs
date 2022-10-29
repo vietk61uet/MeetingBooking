@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -35,6 +36,16 @@
             this.btnView = new System.Windows.Forms.Button();
             this.lblTime = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.serialPort = new System.IO.Ports.SerialPort(this.components);
+            this.cmbPort = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.btnDisconnect = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbSerial = new System.Windows.Forms.ComboBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnRegister
@@ -75,6 +86,7 @@
             this.btnCreate.TabIndex = 3;
             this.btnCreate.Text = "Create Room";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnView
             // 
@@ -84,6 +96,7 @@
             this.btnView.TabIndex = 4;
             this.btnView.Text = "View Room";
             this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // lblTime
             // 
@@ -103,11 +116,99 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Hello, admin";
             // 
+            // cmbPort
+            // 
+            this.cmbPort.FormattingEnabled = true;
+            this.cmbPort.Location = new System.Drawing.Point(78, 162);
+            this.cmbPort.Name = "cmbPort";
+            this.cmbPort.Size = new System.Drawing.Size(206, 21);
+            this.cmbPort.TabIndex = 7;
+            this.cmbPort.SelectedIndexChanged += new System.EventHandler(this.cmbPort_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(29, 165);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "PORT :";
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.Location = new System.Drawing.Point(32, 237);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(107, 23);
+            this.btnConnect.TabIndex = 9;
+            this.btnConnect.Text = "CONNECT";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
+            // btnDisconnect
+            // 
+            this.btnDisconnect.Location = new System.Drawing.Point(186, 237);
+            this.btnDisconnect.Name = "btnDisconnect";
+            this.btnDisconnect.Size = new System.Drawing.Size(111, 23);
+            this.btnDisconnect.TabIndex = 10;
+            this.btnDisconnect.Text = "DISCONNECT";
+            this.btnDisconnect.UseVisualStyleBackColor = true;
+            this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(43, 277);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "STATUS :";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(128, 277);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(77, 13);
+            this.lblStatus.TabIndex = 12;
+            this.lblStatus.Text = "DISCONNECT";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(29, 205);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "SERIAL : ";
+            // 
+            // cmbSerial
+            // 
+            this.cmbSerial.FormattingEnabled = true;
+            this.cmbSerial.Location = new System.Drawing.Point(89, 197);
+            this.cmbSerial.Name = "cmbSerial";
+            this.cmbSerial.Size = new System.Drawing.Size(195, 21);
+            this.cmbSerial.TabIndex = 14;
+            this.cmbSerial.SelectedIndexChanged += new System.EventHandler(this.cmbSerial_SelectedIndexChanged);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 10000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 318);
+            this.ClientSize = new System.Drawing.Size(363, 314);
+            this.Controls.Add(this.cmbSerial);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnDisconnect);
+            this.Controls.Add(this.btnConnect);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbPort);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.btnView);
@@ -131,5 +232,15 @@
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label label1;
+        private System.IO.Ports.SerialPort serialPort;
+        private System.Windows.Forms.ComboBox cmbPort;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.Button btnDisconnect;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbSerial;
+        private System.Windows.Forms.Timer timer1;
     }
 }

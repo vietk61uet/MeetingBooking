@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace WindowsFormsApp1
 {
@@ -21,8 +15,9 @@ namespace WindowsFormsApp1
         }
 
         // connect database
-        string strCon = @"Data Source=DESKTOP-GK3VBNL\SQLEXPRESS;Initial Catalog=user;Integrated Security=True";
+        //string strCon = @"Data Source=DESKTOP-GK3VBNL\SQLEXPRESS;Initial Catalog=user;Integrated Security=True";
         SqlConnection sqlCon = null;
+        string strCon = Properties.Settings.Default.userConnectionString;
 
         private void Connectdb()
         {
@@ -39,9 +34,8 @@ namespace WindowsFormsApp1
         private void btnExit_Click(object sender, EventArgs e)
         {
             //xử lý sự kiện cho button thoát
-            Menu menu = new Menu();
-            this.Hide();
-            menu.ShowDialog();
+            this.Owner.Show();
+            this.Close();
         }
 
         private void btnSeach_Click(object sender, EventArgs e)
@@ -71,8 +65,8 @@ namespace WindowsFormsApp1
                 dtgDSHS.Columns[0].HeaderText = "UserID";
                 dtgDSHS.Columns[1].Width = 80;
                 dtgDSHS.Columns[1].HeaderText = "UserName";
-                dtgDSHS.Columns[1].Width = 120;
-                dtgDSHS.Columns[1].HeaderText = "Image";
+                dtgDSHS.Columns[2].Width = 120;
+                dtgDSHS.Columns[2].HeaderText = "Image";
             }
             catch (Exception ex)
             {

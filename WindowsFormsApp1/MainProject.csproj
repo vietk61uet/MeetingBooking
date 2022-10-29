@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Create_room.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create_room.Designer.cs">
+      <DependentUpon>Create_room.cs</DependentUpon>
+    </Compile>
     <Compile Include="editUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>userDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="View_room.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_room.Designer.cs">
+      <DependentUpon>View_room.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Create_room.resx">
+      <DependentUpon>Create_room.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="editUser.resx">
       <DependentUpon>editUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +131,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View_room.resx">
+      <DependentUpon>View_room.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

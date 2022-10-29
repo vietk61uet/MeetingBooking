@@ -20,7 +20,8 @@ namespace WindowsFormsApp1
             Connectdb();
         }
         // connect database
-        string strCon = @"Data Source=DESKTOP-GK3VBNL\SQLEXPRESS;Initial Catalog=user;Integrated Security=True";
+        //string strCon = @"Data Source=DESKTOP-GK3VBNL\SQLEXPRESS;Initial Catalog=user;Integrated Security=True";
+        string strCon = Properties.Settings.Default.userConnectionString;
         SqlConnection sqlCon = null;
 
         // global variable
@@ -87,10 +88,8 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
-            this.Hide();
-            menu.ShowDialog();
-            //this.Show();
+            this.Owner.Show();
+            this.Close();
         }
 
         private void sign_up_FormClosing(object sender, FormClosingEventArgs e)

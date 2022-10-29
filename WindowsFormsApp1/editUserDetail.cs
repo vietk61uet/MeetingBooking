@@ -31,7 +31,8 @@ namespace WindowsFormsApp1
         }
 
         // connect database
-        string strCon = @"Data Source=DESKTOP-GK3VBNL\SQLEXPRESS;Initial Catalog=user;Integrated Security=True";
+        //string strCon = @"Data Source=DESKTOP-GK3VBNL\SQLEXPRESS;Initial Catalog=user;Integrated Security=True";
+        string strCon = Properties.Settings.Default.userConnectionString;
         SqlConnection sqlCon = null;
 
         private void Connectdb()
