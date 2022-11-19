@@ -21,13 +21,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_7BF66334E7974F5EA4A1343550B3ACC5"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BC45FFD445444B088B71FBFC147AE687"
+        "MsmKey" = "8:_73E4D4028C324411A751CD9C273D2043"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -40,13 +34,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EA4158900A00B52B270FE209C5FEB7BF"
+        "OwnerKey" = "8:_3766D653191F4C6DB7E81DFF77CD68BE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3766D653191F4C6DB7E81DFF77CD68BE"
+        "OwnerKey" = "8:_EA4158900A00B52B270FE209C5FEB7BF"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -67,6 +61,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -83,6 +85,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -112,30 +122,10 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7BF66334E7974F5EA4A1343550B3ACC5"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_73E4D4028C324411A751CD9C273D2043"
             {
-            "SourcePath" = "8:C:\\Users\\Admin\\Downloads\\mycollection\\png\\icon.ico"
+            "SourcePath" = "8:..\\MeetingBooking\\image\\icon.ico"
             "TargetName" = "8:icon.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_8AFAF13B3C2742AC893AECDD1B4F23C1"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BC45FFD445444B088B71FBFC147AE687"
-            {
-            "SourcePath" = "8:C:\\Users\\Admin\\Downloads\\meetings_meeting_table_people_work_icon_144587.ico"
-            "TargetName" = "8:meetings_meeting_table_people_work_icon_144587.ico"
             "Tag" = "8:"
             "Folder" = "8:_8AFAF13B3C2742AC893AECDD1B4F23C1"
             "Condition" = "8:"
@@ -371,7 +361,7 @@
             "Target" = "8:_3766D653191F4C6DB7E81DFF77CD68BE"
             "Folder" = "8:_B7D217A3FB314F25B41157931C4556AD"
             "WorkingFolder" = "8:_8AFAF13B3C2742AC893AECDD1B4F23C1"
-            "Icon" = "8:_BC45FFD445444B088B71FBFC147AE687"
+            "Icon" = "8:_73E4D4028C324411A751CD9C273D2043"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3EEBB6B5BFEC43E9B33FEE8615AA4D1D"
@@ -385,7 +375,7 @@
             "Target" = "8:_3766D653191F4C6DB7E81DFF77CD68BE"
             "Folder" = "8:_A8B8A1FEF8C34D929D47E503F8BCEAAB"
             "WorkingFolder" = "8:_8AFAF13B3C2742AC893AECDD1B4F23C1"
-            "Icon" = "8:_BC45FFD445444B088B71FBFC147AE687"
+            "Icon" = "8:_73E4D4028C324411A751CD9C273D2043"
             "Feature" = "8:"
             }
         }

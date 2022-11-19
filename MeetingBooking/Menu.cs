@@ -35,18 +35,28 @@ namespace WindowsFormsApp1
             Connectdb();
             lblStatus.ForeColor = Color.Red;
         }
-        SqlConnection sqlCon = null;
+        SqlConnection sqlCon1 = null;
+        SqlConnection sqlCon2 = null;
         string strCon = Properties.Settings.Default.userConnectionString;
 
         private void Connectdb()
         {
-            if (sqlCon == null)
+            if (sqlCon1 == null)
             {
-                sqlCon = new SqlConnection(strCon);
+                sqlCon1 = new SqlConnection(strCon);
             }
-            if (sqlCon.State != ConnectionState.Open)
+            if (sqlCon1.State != ConnectionState.Open)
             {
-                sqlCon.Open(); // open database if state == close
+                sqlCon1.Open(); // open database if state == close
+            }
+
+            if (sqlCon2 == null)
+            {
+                sqlCon2 = new SqlConnection(strCon);
+            }
+            if (sqlCon2.State != ConnectionState.Open)
+            {
+                sqlCon2.Open(); // open database if state == close
             }
         }
 
@@ -145,24 +155,28 @@ namespace WindowsFormsApp1
 
             if (id > 0)
             {
-                string sqlCmd = "select UR.RoomID, UR.UserName, HM.Status from UserRegister UR left join HistoryManager HM on UR.RoomID = HM.RoomID where UR.UserID like " + id + ";";
+                string sqlCmd = "select top 1 UR.RoomID, UR.UserName, HM.Status from UserRegister UR left join HistoryManager HM on UR.RoomID = HM.RoomID and UR.UserName = HM.UserName where UR.UserID like " + id + " order by Time desc;";
                 cmd.CommandText = sqlCmd;
-                cmd.Connection = sqlCon;
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                cmd.Connection = sqlCon1;
+                SqlDataReader reader1 = cmd.ExecuteReader();
+                while (reader1.Read())
                 {
-                    roomID = Convert.ToInt32(reader["RoomID"].ToString());
-                    userName = reader["UserName"].ToString();
-                    status = reader["Status"].ToString();
+                    roomID = Convert.ToInt32(reader1["RoomID"].ToString());
+                    userName = reader1["UserName"].ToString();
+                    status = reader1["Status"].ToString();
                 }
-                reader.Close();
+                reader1.Close();
                 if (status == string.Empty || status.Trim(' ') == "out")
                 {
                     status = "in";
+                    string data = "Welcome " + userName;
+                    port.Write(data);
                 }
                 else
                 {
                     status = "out";
+                    string data = "Bye " + userName;
+                    port.Write(data);
                 }
 
                 string sqlCmd1 = "INSERT INTO HistoryManager(RoomID, UserName, Time, Status) values (" + roomID + ", '" + userName + "', '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "', '" + status + "');";
@@ -223,13 +237,13 @@ namespace WindowsFormsApp1
             // Xóa các room có timeEnd < now
             String sqlCmd = "DELETE FROM RoomManager WHERE TimeEnd < '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "';";
             cmd.CommandText = sqlCmd;
-            cmd.Connection = sqlCon;
+            cmd.Connection = sqlCon2;
             cmd.ExecuteNonQuery();
 
             // Update các user được đky trong room gần nhất
             String sqlCmd1 = "select top(1) *  from RoomManager order by TimeStart asc";
             cmd.CommandText = sqlCmd1;
-            cmd.Connection = sqlCon;
+            cmd.Connection = sqlCon2;
             SqlDataReader reader = cmd.ExecuteReader();
             int roomId = 0;
             string[] ListEmployee = new string[] {};
@@ -242,11 +256,21 @@ namespace WindowsFormsApp1
 
             reader.Close();
 
-            foreach (string EmployeeId in ListEmployee)
+            if (roomId > 0)
             {
-                String sqlCmd2 = "UPDATE UserRegister SET RoomID = " + roomId + " WHERE UserName = '" + EmployeeId + "';";
+                foreach (string EmployeeId in ListEmployee)
+                {
+                    String sqlCmd2 = "UPDATE UserRegister SET RoomID = " + roomId + " WHERE UserName = '" + EmployeeId + "';";
+                    cmd.CommandText = sqlCmd2;
+                    cmd.Connection = sqlCon2;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            else
+            {
+                String sqlCmd2 = "  Update UserRegister SET RoomID = null WHERE UserID IN (SELECT UserID FROM UserRegister);";
                 cmd.CommandText = sqlCmd2;
-                cmd.Connection = sqlCon;
+                cmd.Connection = sqlCon2;
                 cmd.ExecuteNonQuery();
             }
         }
