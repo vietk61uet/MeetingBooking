@@ -47,6 +47,10 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Please choose Time End > Time Start");
             }
+            else if (dataGridView1.RowCount <= 0)
+            {
+                MessageBox.Show("Please choose employee");
+            }
             else
             {
                 SqlCommand cmd = new SqlCommand();
@@ -56,6 +60,7 @@ namespace WindowsFormsApp1
                 string sqlCmd1 = "INSERT INTO RoomManager(TimeStart, TimeEnd, ListEmployee) VALUES(' " + TimeStart.Value.ToString("yyyy-MM-dd hh:mm:ss") + "', '" + TimeEnd.Value.ToString("yyyy-MM-dd hh:mm:ss") + "', '"+ ListSelectedEmpyee  + "');";
                 cmd.CommandText = sqlCmd1;
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Create room successfully");
             }
         }
 
